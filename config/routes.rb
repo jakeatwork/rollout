@@ -1,4 +1,6 @@
 Rollout::Application.routes.draw do
+  resources :changes
+
   resources :launches
 
   resources :prices
