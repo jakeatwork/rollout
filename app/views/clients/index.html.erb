@@ -4,18 +4,18 @@
     <div class="col-md-1">
       Name
     </div>
-    <div class="col-md-1">
+    <div class="col-md-1 visible-lg">
       Division
     </div>
-    <div class="col-md-1">
+    <div class="col-md-1 visible-lg">
       Region
     </div>
   </div>
     <% @clients.each do |client| %>
       <div class="row">
         <div class="col-md-1"><%= link_to "#{client.name}", client %></div>
-        <div class="col-md-1"><%= client.division %></div>
-        <div class="col-md-1"><%= client.region %></div>
+        <div class="col-md-1 visible-lg"><%= client.division %></div>
+        <div class="col-md-1 visible-lg"><%= client.region %></div>
         <div class="btn-group">
           <button type="button" class="btn btn-default">
             <%= link_to '<span class="glyphicon glyphicon-eye-open"></span>' .html_safe, client %>
