@@ -1,4 +1,6 @@
 Rollout::Application.routes.draw do
+  resources :launches
+
   resources :prices
 
   resources :clients

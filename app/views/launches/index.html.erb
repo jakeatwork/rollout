@@ -1,0 +1,31 @@
+<h1>Listing launches</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Beta</th>
+      <th>Betadate</th>
+      <th>Startdate</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @launches.each do |launch| %>
+      <tr>
+        <td><%= launch.beta %></td>
+        <td><%= launch.betadate %></td>
+        <td><%= launch.startdate %></td>
+        <td><%= link_to 'Show', launch %></td>
+        <td><%= link_to 'Edit', edit_launch_path(launch) %></td>
+        <td><%= link_to 'Destroy', launch, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Launch', new_launch_path %>

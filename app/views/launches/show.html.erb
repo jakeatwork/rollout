@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Beta:</strong>
+  <%= @launch.beta %>
+</p>
+
+<p>
+  <strong>Betadate:</strong>
+  <%= @launch.betadate %>
+</p>
+
+<p>
+  <strong>Startdate:</strong>
+  <%= @launch.startdate %>
+</p>
+
+<%= link_to 'Edit', edit_launch_path(@launch) %> |
+<%= link_to 'Back', launches_path %>
