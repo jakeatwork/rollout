@@ -13,4 +13,13 @@
 class Client < ActiveRecord::Base
 	has_one :price
 	has_one :launch
+
+	def self.to_csv
+		CSV.generate do |csv|
+			csv << column_names
+			all.each do |client|
+				csv << client.attributes.values_at(*column_names)
+			end
+		end
+	end
 end
