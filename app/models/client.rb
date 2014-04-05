@@ -11,4 +11,6 @@
 #
 
 class Client < ActiveRecord::Base
+	has_one :price
+	has_one :launch
 end
