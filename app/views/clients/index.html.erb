@@ -1,40 +1,34 @@
 <h1>Listing clients</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Division</th>
-      <th>Region</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-
-  <tbody>
+  <div class="row">
+    <div class="col-md-1">
+      Name
+    </div>
+    <div class="col-md-1">
+      Division
+    </div>
+    <div class="col-md-1">
+      Region
+    </div>
+  </div>
     <% @clients.each do |client| %>
-      <tr>
-        <td><%= link_to "#{client.name}", client %></td>
-        <td><%= client.division %></td>
-        <td><%= client.region %></td>
-        <td>
+      <div class="row">
+        <div class="col-md-1"><%= link_to "#{client.name}", client %></div>
+        <div class="col-md-1"><%= client.division %></div>
+        <div class="col-md-1"><%= client.region %></div>
         <div class="btn-group">
-        <button type="button" class="btn btn-default">
-        <%= link_to '<span class="glyphicon glyphicon-eye-open"></span>' .html_safe, client %>
-        </button>
-        <button type="button" class="btn btn-default">
-        <%= link_to '<span class="glyphicon glyphicon-edit"></span>' .html_safe, edit_client_path(client) %>
-        </button>
-        <button type="button" class="btn btn-default">
-        <%= link_to '<span class="glyphicon glyphicon-trash"></span>' .html_safe, client, method: :delete, data: { confirm: 'Are you sure?' } %>
-        </button>
+          <button type="button" class="btn btn-default">
+            <%= link_to '<span class="glyphicon glyphicon-eye-open"></span>' .html_safe, client %>
+          </button>
+          <button type="button" class="btn btn-default">
+            <%= link_to '<span class="glyphicon glyphicon-edit"></span>' .html_safe, edit_client_path(client) %>
+          </button>
+          <button type="button" class="btn btn-default">
+            <%= link_to '<span class="glyphicon glyphicon-trash"></span>' .html_safe, client, method: :delete, data: { confirm: 'Are you sure?' } %>
+          </button>
         </div>
-        </td>
-      </tr>
+      </div>
     <% end %>
-  </tbody>
-</table>
 
 <br>
 
