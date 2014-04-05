@@ -15,7 +15,7 @@
   <tbody>
     <% @clients.each do |client| %>
       <tr>
-        <td><%= client.name %></td>
+        <td><%= link_to "#{client.name}", client %></td>
         <td><%= client.division %></td>
         <td><%= client.region %></td>
         <td>
