@@ -6,9 +6,10 @@
 <% end %>
 <% if user_signed_in? %>
   <li><%= link_to 'Edit account', edit_user_registration_path %></li>
-  <li><%= link_to 'Clients', edit_user_registration_path %></li>
-  <li><%= link_to 'Prices', edit_user_registration_path %></li>
-  <li><%= link_to 'Launches', edit_user_registration_path %></li>
+  <li><%= link_to 'Clients', clients_path %></li>
+  <li><%= link_to 'Prices', prices_path %></li>
+  <li><%= link_to 'Launches', launches_path %></li>
+  <li><%= link_to 'Changes', changes_path %></li>
 <% else %>
   <li><%= link_to 'Sign up', new_user_registration_path %></li>
 <% end %>
