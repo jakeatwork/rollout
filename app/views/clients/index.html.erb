@@ -1,4 +1,4 @@
-<h1>Listing clients</h1>
+<h1>VES Clients</h1>
 
   <table class="table table-striped">
   <tr><td>
@@ -6,7 +6,7 @@
       <div class="col-xs-3">
         Name
       </div>
-      <div class="col-xs-5">
+      <div>
         Show/Edit/Delete
       </div>
     </div>
@@ -16,7 +16,7 @@
         <tr><td>
           <div class="row">
             <div class="col-xs-3"><%= link_to "#{client.name}", client %></div>
-              <div class="btn-group col-xs-5">
+              <div class="btn-group">
                 <button type="button" class="btn btn-default">
                   <%= link_to '<span class="glyphicon glyphicon-eye-open"></span>' .html_safe, client %>
                 </button>
