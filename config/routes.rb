@@ -1,4 +1,6 @@
 Rollout::Application.routes.draw do
+  resources :prices
+
   resources :clients
 
   root :to => "home#index"
