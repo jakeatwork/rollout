@@ -9,6 +9,7 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 1.2'
 gem 'bootstrap-sass'
 gem 'cancan'
+gem 'annotate', ">=2.5.0"
 gem 'devise'
 gem 'pg'
 gem 'rolify'
