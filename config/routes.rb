@@ -1,4 +1,6 @@
 Rollout::Application.routes.draw do
+  resources :divisions
+
   resources :changes
 
   resources :launches
