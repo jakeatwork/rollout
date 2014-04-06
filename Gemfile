@@ -13,7 +13,7 @@ gem 'annotate', ">=2.5.0"
 gem 'devise'
 gem 'pg'
 gem 'rolify'
-gem 'simple_form'
+gem 'simple_form', ""
 gem 'thin'
 group :development do
   gem 'better_errors'
