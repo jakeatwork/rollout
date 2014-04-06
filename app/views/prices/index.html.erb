@@ -1,27 +1,45 @@
 <h1>Listing prices</h1>
 
-<table>
-  <thead>
+<table class="table table-striped">
     <tr>
-      <th>Type</th>
-      <th>Cost</th>
-      <th></th>
-      <th></th>
-      <th></th>
+    <td>
+      <div class="row">
+        <div class="col-xs-3">
+          Price Name
+        </div>
+        <div class="col-xs-2">
+          Cost Per Month
+        </div>
+        <div class="col-xs-7">
+          Show/Edit/Delete
+        </div>
+      </div>
+      </td>
     </tr>
-  </thead>
 
-  <tbody>
     <% @prices.each do |price| %>
-      <tr>
-        <td><%= price.price_name %></td>
-        <td><%= price.cost %></td>
-        <td><%= link_to 'Show', price %></td>
-        <td><%= link_to 'Edit', edit_price_path(price) %></td>
-        <td><%= link_to 'Destroy', price, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
+        <tr><td>
+          <div class="row">
+            <div class="col-xs-3"><%= link_to "#{price.price_name}", price %></div>
+            <div class="col-xs-2">
+              $<%= price.cost %>.00/month
+            </div>
+              <div class="btn-group text-right col-xs-7">
+                <button type="button" class="btn btn-default btn-sm">
+                  <%= link_to '<span class="glyphicon glyphicon-eye-open"></span>' .html_safe, price %>
+                </button>
+                <button type="button" class="btn btn-default btn-sm">
+                  <%= link_to '<span class="glyphicon glyphicon-edit"></span>' .html_safe, edit_price_path(price) %>
+                </button>
+                <button type="button" class="btn btn-default btn-sm">
+                  <%= link_to '<span class="glyphicon glyphicon-trash"></span>' .html_safe, price, method: :delete, data: { confirm: 'Are you sure?' } %>
+                </button>
+              </div>
+          </div>
+          <div class="row">&nbsp;</div>
+        </td></tr>
+      <% end %>
+
 </table>
 
 <br>
