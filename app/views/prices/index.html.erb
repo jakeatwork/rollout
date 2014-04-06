@@ -25,13 +25,13 @@
               $<%= price.cost %>.00/month
             </div>
               <div class="btn-group text-right col-xs-7">
-                <button type="button" class="btn btn-default btn-sm">
+                <button type="button" class="btn btn-default btn-xs">
                   <%= link_to '<span class="glyphicon glyphicon-eye-open"></span>' .html_safe, price %>
                 </button>
-                <button type="button" class="btn btn-default btn-sm">
+                <button type="button" class="btn btn-default btn-xs">
                   <%= link_to '<span class="glyphicon glyphicon-edit"></span>' .html_safe, edit_price_path(price) %>
                 </button>
-                <button type="button" class="btn btn-default btn-sm">
+                <button type="button" class="btn btn-default btn-xs">
                   <%= link_to '<span class="glyphicon glyphicon-trash"></span>' .html_safe, price, method: :delete, data: { confirm: 'Are you sure?' } %>
                 </button>
               </div>
