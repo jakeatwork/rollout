@@ -14,7 +14,7 @@
   <tbody>
     <% @prices.each do |price| %>
       <tr>
-        <td><%= price.type %></td>
+        <td><%= price.price_name %></td>
         <td><%= price.cost %></td>
         <td><%= link_to 'Show', price %></td>
         <td><%= link_to 'Edit', edit_price_path(price) %></td>
