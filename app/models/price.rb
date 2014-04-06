@@ -3,7 +3,7 @@
 # Table name: prices
 #
 #  id         :integer          not null, primary key
-#  type       :string(255)
+#  price_name :string(255)
 #  cost       :integer
 #  created_at :datetime
 #  updated_at :datetime

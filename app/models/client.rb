@@ -13,6 +13,7 @@
 class Client < ActiveRecord::Base
 	has_one :price
 	has_one :launch
+	has_one :division
 
 	def self.to_csv
 		CSV.generate do |csv|
