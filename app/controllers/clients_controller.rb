@@ -5,10 +5,11 @@ class ClientsController < ApplicationController
   # GET /clients
   # GET /clients.json
   def index
-    @clients = Client.order(sort_column + ' ' + sort_direction)
+    @clients = Client.order(:name)
     respond_to do |format|
       format.html
-      format.csv {render text: @clients.to_csv }
+      format.csv { send_data @clients.to_csv }
+      format.xls
     end
   end
 
