@@ -18,7 +18,6 @@
 
     <% @prices.each do |price| %>
         <tr class="row"><td>
-
             <div class="col-xs-3"><%= link_to "#{price.price_name}", price %></div>
             <div class="col-xs-2">
               $<%= price.cost %>
@@ -34,8 +33,6 @@
                   <%= link_to '<span class="glyphicon glyphicon-trash"></span>' .html_safe, price, method: :delete, data: { confirm: 'Are you sure?' } %>
                 </button>
               </div>
-
-          <div class="row">&nbsp;</div>
         </td></tr>
       <% end %>
 
