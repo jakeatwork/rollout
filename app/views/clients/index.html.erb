@@ -10,16 +10,19 @@
 
 
   <table class="table table-striped">
-  <tr><td>
-    <div class="row">
-      <div class="col-xs-5">
-        Name
+  <tr>
+    <td>
+      <div class="row">
+        <div class="col-xs-5">
+          <%= sortable "Name" %>
+        </div>
+        <div class="col-xs-7">
+          Show/Edit/Delete
+        </div>
       </div>
-      <div class="col-xs-7">
-        Show/Edit/Delete
-      </div>
-    </div>
-    </td></tr>
+      </td>
+    </tr>
+
 
       <% @clients.each do |client| %>
         <tr><td>
