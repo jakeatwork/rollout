@@ -5,7 +5,6 @@ class ClientsController < ApplicationController
   # GET /clients
   # GET /clients.json
   def index
-
     @clients = Client.order(sort_column + ' ' + sort_direction)
     respond_to do |format|
       format.html

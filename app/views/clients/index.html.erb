@@ -1,13 +1,11 @@
 <div class="container">
 <h1>VES Clients</h1>
 
-
 <div class="btn-group">
 <button type="button" class="btn btn-default btn-sm"><%= link_to 'New Client', new_client_path %></button>
 <button type="button" class="btn btn-default btn-sm"><%= link_to "CSV", clients_path(format: "csv") %></button>
 <br>
 </div>
-
 
   <table class="table table-striped">
   <tr>
@@ -23,10 +21,10 @@
       </td>
     </tr>
 
-
       <% @clients.each do |client| %>
         <tr><td>
           <div class="row">
+            <div class="col-xs-5"><%= link_to "#{client.name}", client %></div>
             <div class="col-xs-5"><%= link_to "#{client.name}", client %></div>
               <div class="btn-group text-right col-xs-7">
                 <button type="button" class="btn btn-default btn-sm">
