@@ -1,4 +1,4 @@
-<div class="container">
+
 <h1>VES Clients</h1>
 
 <div class="btn-group">
@@ -9,22 +9,19 @@
 
 <div class="table-responsive">
   <table class="table table-striped">
-  <tr>
+  <tr class="row">
     <td>
-      <div class="row">
         <div class="col-xs-5">
           <%= sortable "Name" %>
         </div>
         <div class="col-xs-7">
           Show/Edit/Delete
         </div>
-      </div>
       </td>
     </tr>
 
       <% @clients.each do |client| %>
-        <tr><td>
-          <div class="row">
+        <tr class="row"><td>
             <div class="col-xs-5"><%= link_to "#{client.name}", client %></div>
               <div class="btn-group text-right col-xs-7">
                 <button type="button" class="btn btn-default btn-xs">
@@ -37,7 +34,6 @@
                   <%= link_to '<span class="glyphicon glyphicon-trash"></span>' .html_safe, client, method: :delete, data: { confirm: 'Are you sure?' } %>
                 </button>
               </div>
-          </div>
           <div class="row">&nbsp;</div>
         </td></tr>
       <% end %>
@@ -49,4 +45,4 @@
 <%= link_to 'New Client', new_client_path %>
 <br>
 <%= link_to "CSV", clients_path(format: "csv") %>
-</div>
+
