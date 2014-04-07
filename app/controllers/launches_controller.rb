@@ -1,5 +1,6 @@
 class LaunchesController < ApplicationController
   before_action :set_launch, only: [:show, :edit, :update, :destroy]
+  before_filter :authenticate_user!
 
   # GET /launches
   # GET /launches.json

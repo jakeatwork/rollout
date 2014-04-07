@@ -1,5 +1,6 @@
 class ChangesController < ApplicationController
   before_action :set_change, only: [:show, :edit, :update, :destroy]
+  before_filter :authenticate_user!
 
   # GET /changes
   # GET /changes.json
