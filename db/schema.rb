@@ -25,7 +25,7 @@ ActiveRecord::Schema.define(version: 20140409170634) do
 
   create_table "clients", force: true do |t|
     t.string   "name"
-    t.string   "division"
+    t.string   "division_id"
     t.string   "region"
     t.datetime "created_at"
     t.datetime "updated_at"
