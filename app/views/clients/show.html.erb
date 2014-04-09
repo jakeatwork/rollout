@@ -11,6 +11,16 @@
 </p>
 
 <p>
+  <strong>Internal?:</strong>
+  <%= @client.internal %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @client.price.name  %> at $<%= @client.price.cost %> per month
+</p>
+
+<p>
   <strong>Region:</strong>
   <%= @client.region %>
 </p>
