@@ -17,6 +17,7 @@ class ClientsController < ApplicationController
   # GET /clients/1
   # GET /clients/1.json
   def show
+    @client = Client.find(params[:id])
   end
 
   # GET /clients/new
@@ -26,11 +27,7 @@ class ClientsController < ApplicationController
 
   # GET /clients/1/edit
   def edit
-
-    @price = Client.cost
-
-
-
+    @client = Client.find(params[:id])
   end
 
   # POST /clients
