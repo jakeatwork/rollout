@@ -9,7 +9,7 @@
 #  created_at :datetime
 #  updated_at :datetime
 #  internal   :boolean
-#  cost_id    :integer
+#  price_id   :integer
 #
 
 # Read about factories at https://github.com/thoughtbot/factory_girl
