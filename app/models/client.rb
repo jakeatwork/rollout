@@ -13,7 +13,7 @@
 #
 
 class Client < ActiveRecord::Base
-	has_one :price
+	belongs_to :price
 	# has_one :launch - removing launch and just including in client db
 	# has_one :division
 

@@ -5,7 +5,7 @@
     <%= f.input :name %>
     <%= f.input :division %>
     <%= f.input :region %>
-    <%= f.association :prices, collection: @ %>
+    <%= f.association :price, as: :multiple %>
   </div>
 
   <div class="form-actions">
