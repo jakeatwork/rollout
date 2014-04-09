@@ -78,18 +78,14 @@ class ClientsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def client_params
-      params.require(:client).permit(:name, :division, :region)
+      params.require(:client).permit(:name, :division, :region, :price_id)
     end
 
-private
+    def sort_column
+      params[:sort] || "name"
+    end
 
-def sort_column
-  params[:sort] || "name"
-end
-
-def sort_direction
-  params[:direction] || "asc"
-end
-
-
+    def sort_direction
+      params[:direction] || "asc"
+    end
 end
