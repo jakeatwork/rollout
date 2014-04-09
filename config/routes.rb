@@ -1,4 +1,6 @@
 Rollout::Application.routes.draw do
+  resources :logs
+
   resources :divisions
 
   resources :changes
