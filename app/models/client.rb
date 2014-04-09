@@ -8,11 +8,13 @@
 #  region     :string(255)
 #  created_at :datetime
 #  updated_at :datetime
+#  internal   :boolean
+#  price_id   :integer
 #
 
 class Client < ActiveRecord::Base
-	has_one :price
-	has_one :launch
+	belongs_to :price
+	# has_one :launch - removing launch and just including in client db
 	# has_one :division
 
   def self.to_csv(options = {})

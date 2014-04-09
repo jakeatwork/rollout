@@ -8,6 +8,8 @@
 #  region     :string(255)
 #  created_at :datetime
 #  updated_at :datetime
+#  internal   :boolean
+#  price_id   :integer
 #
 
 require 'spec_helper'

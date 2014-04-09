@@ -26,7 +26,11 @@ class ClientsController < ApplicationController
 
   # GET /clients/1/edit
   def edit
+
     @price = Client.cost
+
+
+
   end
 
   # POST /clients
