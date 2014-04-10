@@ -10,7 +10,7 @@ class ClientsController < ApplicationController
     @user = current_user
     respond_to do |format|
       format.html
-      format.csv { send_data @clients.to_csv }
+      # format.csv { send_data @clients.to_csv }
       format.xls
     end
   end
