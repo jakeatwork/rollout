@@ -11,6 +11,7 @@ gem 'rails_12factor', group: :production
 gem 'jbuilder', '~> 1.2'
 gem 'bootstrap-sass'
 gem 'cancan'
+gem 'paper_trail', '~> 3.0.1'
 gem 'rails_stdout_logging'
 gem 'annotate', ">=2.5.0"
 gem 'devise'
