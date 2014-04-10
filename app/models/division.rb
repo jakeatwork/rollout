@@ -10,4 +10,5 @@
 
 class Division < ActiveRecord::Base
 	has_many :clients
+	has_paper_trail
 end
