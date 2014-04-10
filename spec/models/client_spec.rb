@@ -10,7 +10,8 @@
 #  updated_at  :datetime
 #  internal    :boolean
 #  price_id    :integer
-#  launch_date :datetime
+#  launch_date :date
+#  notes       :text
 #
 
 require 'spec_helper'
