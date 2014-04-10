@@ -88,6 +88,7 @@ class ClientsController < ApplicationController
 
     def sort_column
       params[:sort] || "name"
+      params[:sort] || "launch_date"
     end
 
     def sort_direction
