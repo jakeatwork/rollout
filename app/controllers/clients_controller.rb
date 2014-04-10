@@ -7,6 +7,7 @@ class ClientsController < ApplicationController
   # GET /clients.json
   def index
     @clients = Client.order(:name)
+    @user = current_user
     respond_to do |format|
       format.html
       format.csv { send_data @clients.to_csv }
@@ -24,17 +25,20 @@ class ClientsController < ApplicationController
   # GET /clients/new
   def new
     @client = Client.new
+    @user = current_user
   end
 
   # GET /clients/1/edit
   def edit
     @client = Client.find(params[:id])
+    @user = current_user
   end
 
   # POST /clients
   # POST /clients.json
   def create
     @client = Client.new(client_params)
+    @user = current_user
 
     respond_to do |format|
       if @client.save
