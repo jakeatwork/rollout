@@ -28,4 +28,6 @@ Rollout::Application.configure do
   config.assets.debug = true
 
   $stdout.sync = true
+
+  Time::DATE_FORMATS[:launch_date] = "due on %B %d"
 end

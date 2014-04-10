@@ -19,10 +19,10 @@
 # To learn more, please read the Rails Internationalization guide
 # available at http://guides.rubyonrails.org/i18n.html.
 
-  en:
+en:
   datepicker:
-    dformat: '%m/%d/%Y'        # display format of the date (this is the default, can be ommited)
-    pformat: 'MM/dd/yyyy'      # picking format of the date (this is the default, can be ommited)
+    dformat: '%d/%m/%Y'        # display format of the date (this is the default, can be ommited)
+    pformat: 'dd/MM/yyyy'      # picking format of the date (this is the default, can be ommited)
     weekstart: 0               # the week starts on Sunday (this is the default, can be ommited)
   timepicker:
     dformat: '%R'              # display format of the time (this is the default, can be ommited)

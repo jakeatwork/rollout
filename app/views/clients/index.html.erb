@@ -9,8 +9,11 @@
   <table class="table table-striped table-reponsive">
   <tr class="row">
     <td>
-        <div class="col-xs-4">
+        <div class="col-xs-2">
           <%= sortable "Name" %>
+        </div>
+        <div class="col-xs-2">
+          <%= sortable "Launch Date" %>
         </div>
         <div class="col-xs-8">
           Show/Edit/Delete
@@ -20,7 +23,8 @@
 
       <% @clients.each do |client| %>
         <tr class="row"><td>
-            <div class="col-xs-4"><%= link_to "#{client.name}", client %></div>
+            <div class="col-xs-2"><%= link_to "#{client.name}", client %></div>
+            <div class="col-xs-2"><%= client.launch_date %></div>
               <div class="btn-group text-right col-xs-8">
                 <button type="button" class="btn btn-default btn-xs">
                   <%= link_to '<span class="glyphicon glyphicon-eye-open"></span>' .html_safe, client %>

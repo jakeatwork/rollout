@@ -18,4 +18,8 @@ module ApplicationHelper
     link_to title, :sort => column, :direction => direction
   end
 
+  def formatted_date(date)
+    date.strftime("%m-%d-%y")
+  end
+
 end
