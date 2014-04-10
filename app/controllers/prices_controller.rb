@@ -5,6 +5,7 @@ class PricesController < ApplicationController
   # GET /prices.json
   def index
     @prices = Price.all
+    @user = current_user
   end
 
   # GET /prices/1
@@ -15,16 +16,20 @@ class PricesController < ApplicationController
   # GET /prices/new
   def new
     @price = Price.new
+    @user = current_user
   end
 
   # GET /prices/1/edit
   def edit
+    @price = Price.find(params[:id])
+    @user = current_user
   end
 
   # POST /prices
   # POST /prices.json
   def create
     @price = Price.new(price_params)
+    @user = current_user
 
     respond_to do |format|
       if @price.save
