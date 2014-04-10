@@ -1,7 +1,6 @@
-<p>
-  <strong>Name:</strong>
-  <%= @client.name %>
-</p>
+<div class="container">
+
+<h1><%= @client.name %></h1>
 
 <p>
   <strong>Launch Date:</strong>
@@ -30,3 +29,4 @@
 
 <%= link_to 'Edit', edit_client_path(@client) %> |
 <%= link_to 'Back', clients_path %>
+</div>
