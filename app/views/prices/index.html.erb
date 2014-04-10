@@ -18,7 +18,7 @@
 
     <% @prices.each do |price| %>
         <tr class="row"><td>
-            <div class="col-xs-3"><%= link_to "#{price.price_name}", price %></div>
+            <div class="col-xs-3"><%= link_to "#{price.name}", price %></div>
             <div class="col-xs-2">
               $<%= price.cost %>
             </div>
