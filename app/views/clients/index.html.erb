@@ -1,15 +1,18 @@
+<div class="container">
 <h1>Advantage Clients</h1>
 
-<div class="btn-group">
-  <button type="button" class="btn btn-default btn-xs">
-    <%= link_to 'New Client', new_client_path %>
-  </button>
-  <button type="button" class="btn btn-default btn-xs">
-    <%= link_to "Export XLS", clients_path(format: "xls") %>
-  </button>
-<br>
+  <div class="btn-group">
+    <button type="button" class="btn btn-default btn-xs">
+      <%= link_to 'New Client', new_client_path %>
+    </button>
+    <button type="button" class="btn btn-default btn-xs">
+      <%= link_to "Export XLS", clients_path(format: "xls") %>
+    </button>
+  <br>
+  </div>
 </div>
 
+<div class="container">
 <table id="clients" class="table table-striped table-reponsive display" data-source="<%= clients_url(format: "json") %>">
   <thead>
     <tr>
@@ -25,4 +28,7 @@
 <br>
 
 <%= link_to 'New Client', new_client_path %>
+
+</div>
+
 

@@ -26,6 +26,7 @@ class ClientsController < ApplicationController
   # GET /clients/new
   def new
     @client = Client.new
+    can? :create, @client
     @user = current_user
   end
 
