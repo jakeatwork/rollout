@@ -6,7 +6,7 @@ class ClientsController < ApplicationController
   # GET /clients
   # GET /clients.json
   def index
-    # @clients = Client.order(:name)
+    @clients = Client.order(:name)
     # @user = current_user
     respond_to do |format|
       format.html

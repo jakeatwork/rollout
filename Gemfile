@@ -7,6 +7,7 @@ gem 'coffee-rails', '~> 4.0.0'
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
 gem 'datetimepicker-rails', :require => 'datetimepicker-rails', :git => 'git://github.com/zpaulovics/datetimepicker-rails.git'
+gem 'jquery-turbolinks'
 gem 'turbolinks'
 gem 'rails_12factor', group: :production
 gem 'jbuilder', '~> 1.2'
