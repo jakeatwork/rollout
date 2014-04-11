@@ -6,10 +6,11 @@ class ClientsController < ApplicationController
   # GET /clients
   # GET /clients.json
   def index
-    @clients = Client.order(:name)
-    @user = current_user
+    # @clients = Client.order(:name)
+    # @user = current_user
     respond_to do |format|
       format.html
+      format.json { render json: ClientsDatatable.new(view_context) }
       # format.csv { send_data @clients.to_csv }
       format.xls
     end
@@ -84,14 +85,5 @@ class ClientsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def client_params
       params.require(:client).permit(:name, :division_id, :region, :price_id, :internal, :launch_date)
-    end
-
-    def sort_column
-      params[:sort] || "name"
-      params[:sort] || "launch_date"
-    end
-
-    def sort_direction
-      params[:direction] || "asc"
     end
 end

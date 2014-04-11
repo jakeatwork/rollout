@@ -5,11 +5,13 @@ gem 'sass-rails', '~> 4.0.2'
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.0.0'
 gem 'jquery-rails'
+gem 'jquery-ui-rails'
 gem 'datetimepicker-rails', :require => 'datetimepicker-rails', :git => 'git://github.com/zpaulovics/datetimepicker-rails.git'
 gem 'turbolinks'
 gem 'rails_12factor', group: :production
 gem 'jbuilder', '~> 1.2'
 gem 'bootstrap-sass'
+gem 'jquery-datatables-rails', github: 'rweng/jquery-datatables-rails'
 gem 'cancan'
 gem 'paper_trail', '~> 3.0.1'
 gem 'rails_stdout_logging'
@@ -19,6 +21,7 @@ gem 'pg'
 gem 'rolify'
 gem 'simple_form', ">=3.0.1"
 gem 'thin'
+gem 'will_paginate'
 group :development do
   gem 'better_errors'
   gem 'binding_of_caller', :platforms=>[:mri_19, :mri_20, :mri_21, :rbx]
