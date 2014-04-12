@@ -18,6 +18,7 @@ class Client < ActiveRecord::Base
 	belongs_to :price
   belongs_to :division
   has_paper_trail
+  resourcify
 	# has_one :launch - removing launch and just including in client db
 	# has_one :division
 

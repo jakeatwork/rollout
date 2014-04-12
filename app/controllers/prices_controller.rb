@@ -1,5 +1,6 @@
 class PricesController < ApplicationController
   before_action :set_price, only: [:show, :edit, :update, :destroy]
+  load_and_authorize_resource
 
   # GET /prices
   # GET /prices.json

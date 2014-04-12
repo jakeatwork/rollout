@@ -1,9 +1,10 @@
+<div class="container">
 <h1>AEG Divisions</h1>
 
 <table>
   <thead>
     <tr>
-      <th>Division Name</th>
+      <th></th>
       <th></th>
       <th></th>
       <th></th>
@@ -15,8 +16,12 @@
       <tr>
         <td><%= division.name %></td>
         <td><%= link_to 'Show', division %></td>
+        <% if can? :edit, @division %>
         <td><%= link_to 'Edit', edit_division_path(division) %></td>
+        <% end %>
+        <% if can? :destroy, @division %>
         <td><%= link_to 'Destroy', division, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>
@@ -24,6 +29,7 @@
 
 <br>
 
-<% if can? :new, @client %>
+<% if can? :new, @division %>
 <%= link_to 'New Division', new_division_path %>
 <% end %>
+</div>
