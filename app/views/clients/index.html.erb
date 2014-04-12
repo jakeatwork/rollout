@@ -1,5 +1,6 @@
 <div class="container">
 <h1>Advantage Clients</h1>
+<h2>2014 Clients:<%= Client.where(:launch_date > 2014) %></h2>
 
   <div class="btn-group"><% if can? :new, @client %>
     <button type="button" class="btn btn-default btn-xs">

@@ -14,6 +14,7 @@ gem 'jbuilder', '~> 1.2'
 gem 'bootstrap-sass'
 gem 'jquery-datatables-rails', github: 'rweng/jquery-datatables-rails'
 gem 'cancan'
+gem 'squeel'
 gem 'paper_trail', '~> 3.0.1'
 gem 'rails_stdout_logging'
 gem 'annotate', ">=2.5.0"
