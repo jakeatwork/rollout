@@ -2,6 +2,7 @@ class ClientsController < ApplicationController
   before_action :set_client, only: [:show, :edit, :update, :destroy]
   helper_method :sort_column, :sort_direction
   before_filter :authenticate_user!
+  load_and_authorize_resource
 
   # GET /clients
   # GET /clients.json

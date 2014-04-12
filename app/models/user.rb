@@ -19,6 +19,7 @@
 #
 
 class User < ActiveRecord::Base
+  rolify :role_cname => 'Admin'
 	has_many :logs
   	rolify
   	# Include default devise modules. Others available are:

@@ -1,10 +1,10 @@
 <div class="container">
 <h1>Advantage Clients</h1>
 
-  <div class="btn-group">
+  <div class="btn-group"><% if can? :new, @client %>
     <button type="button" class="btn btn-default btn-xs">
       <%= link_to 'New Client', new_client_path %>
-    </button>
+    </button><% end %>
     <button type="button" class="btn btn-default btn-xs">
       <%= link_to "Export XLS", clients_path(format: "xls") %>
     </button>
@@ -26,9 +26,9 @@
 </table>
 
 <br>
-
+<% if can? :new, @client %>
 <%= link_to 'New Client', new_client_path %>
-
+<% end %>
 </div>
 
 

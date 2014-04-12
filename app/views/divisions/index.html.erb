@@ -24,4 +24,6 @@
 
 <br>
 
+<% if can? :new, @client %>
 <%= link_to 'New Division', new_division_path %>
+<% end %>

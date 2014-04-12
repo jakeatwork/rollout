@@ -1,12 +1,15 @@
-<p>
-  <strong>Price Name:</strong>
-  <%= @price.name %>
-</p>
+
+<div class="container">
+<h1><%= @price.name %></h1>
 
 <p>
   <strong>Cost:</strong>
   $<%= @price.cost %> per month
 </p>
 
+<% if can? :edit, @client %>
 <%= link_to 'Edit', edit_price_path(@price) %> |
+<% end %>
 <%= link_to 'Back', prices_path %>
+
+</div>
