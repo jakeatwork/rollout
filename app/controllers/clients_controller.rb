@@ -7,12 +7,11 @@ class ClientsController < ApplicationController
   # GET /clients
   # GET /clients.json
   def index
-    @clients = Client.order(:name)
-    # @user = current_user
+    @clients = Client.all
+    @now = Time.now
     respond_to do |format|
       format.html
       format.json { render json: ClientsDatatable.new(view_context) }
-      # format.csv { send_data @clients.to_csv }
       format.xls
     end
   end
@@ -21,7 +20,6 @@ class ClientsController < ApplicationController
   # GET /clients/1.json
   def show
     @client = Client.find(params[:id])
-    # @whodunnit = User.find last_change.whodunnit.to_i
   end
 
   # GET /clients/new
