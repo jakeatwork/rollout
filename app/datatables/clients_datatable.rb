@@ -32,7 +32,7 @@ private
 
   def fetch_clients
     clients = Client.order("#{sort_column} #{sort_direction}")
-    clients = clients.page(page).per_page(per_page)
+    clients = clients.page(page).per_page(25)
     if params[:sSearch].present?
       clients = clients.where("name like :search", search: "%#{params[:sSearch]}%")
     end
@@ -44,11 +44,11 @@ private
   end
 
   def per_page
-    params[:iDisplayLength].to_i > 0 ? params[:iDisplayLength].to_i : 10
+    params[:iDisplayLength].to_i > 10 ? params[:iDisplayLength].to_i : 50
   end
 
   def sort_column
-    columns = %w[name launch_date client.price.cost]
+    columns = %w[name launch_date]
     columns[params[:iSortCol_0].to_i]
   end
 
