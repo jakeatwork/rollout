@@ -1,6 +1,6 @@
 <div class="container">
 <br>
-<h1>Advantage Clients - <%= @now %></h1> 
+<h1>Advantage Clients as of: <%= @now %></h1> 
 <h4>2014 Clients:<%= Client.where("extract(year from launch_date) = ?", 2014).count %></h4>
 <h4>2015 Clients:<%= Client.where("extract(year from launch_date) = ?", 2015).count %></h4>
 
