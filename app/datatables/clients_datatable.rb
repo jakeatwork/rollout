@@ -32,7 +32,7 @@ private
 
   def fetch_clients
     clients = Client.order("#{sort_column} #{sort_direction}")
-    clients = clients.page(page).per_page(25)
+    clients = clients.page(page).per_page(10)
     if params[:sSearch].present?
       clients = clients.where("name like :search", search: "%#{params[:sSearch]}%")
     end
