@@ -5,6 +5,7 @@
 jQuery ->
         $('#clients').dataTable
           sPaginationType: "full_numbers"
+          bCaseInsensitive: true
           bJQueryUI: true
           bProcessing: true
           bServerSide: true
