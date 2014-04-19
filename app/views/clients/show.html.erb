@@ -5,6 +5,7 @@
 <p>
   <strong>Launch Date:</strong>
   <%= @client.launch_date %>
+  <h5>test: <%= @client.where(launch_date.year * 12 + launch_date.month) - (@now.year * 12 + date1.month) %></h5>
 </p>
 
 <p>
