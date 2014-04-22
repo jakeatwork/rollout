@@ -21,7 +21,7 @@
         <Cell><Data ss:Type="String"><%= client.region %></Data></Cell>
         <Cell><Data ss:Type="String"><%= client.launch_date %></Data></Cell>
         <Cell><Data ss:Type="String"><%= client.internal %></Data></Cell>
-        <Cell><Data ss:Type="String"><%= client.price.cost %></Data></Cell>
+        <Cell><Data ss:Type="String">$<%= client.price.cost %></Data></Cell>
       </Row>
     <% end %>
     </Table>

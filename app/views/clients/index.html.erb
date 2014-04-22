@@ -25,6 +25,9 @@
       <th>Client Name</th>
       <th>Launch Date</th>
       <th>Price Per Month</th>
+      <% if can? :destroy, @client %>
+      <th>Delete Client</th>
+      <% end %>
     </tr>
   </thead>
   <tbody>
