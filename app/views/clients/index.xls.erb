@@ -12,6 +12,7 @@
         <Cell><Data ss:Type="String">Region</Data></Cell>
         <Cell><Data ss:Type="String">Launch Date</Data></Cell>
         <Cell><Data ss:Type="String">Internal?</Data></Cell>
+        <Cell><Data ss:Type="String">Cost Per Month</Data></Cell>
       </Row>
     <% @clients.each do |client| %>
       <Row>
@@ -20,6 +21,7 @@
         <Cell><Data ss:Type="String"><%= client.region %></Data></Cell>
         <Cell><Data ss:Type="String"><%= client.launch_date %></Data></Cell>
         <Cell><Data ss:Type="String"><%= client.internal %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= client.price.cost %></Data></Cell>
       </Row>
     <% end %>
     </Table>
