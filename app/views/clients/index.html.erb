@@ -4,8 +4,11 @@
 <h4>2014 Clients: <%= Client.where("extract(year from launch_date) = ?", 2014).count %></h4>
 <h4>2015 Clients: <%= Client.where("extract(year from launch_date) = ?", 2015).count %></h4>
 
-
-<h5>test: <%= @launch_date  %></h5>
+    <% @clients.each do |client| %>
+      <tr>
+        <td><%= (client.launch_date.year * 12 + client.launch_date.month) - (2014 * 12 + 12) %></td>
+      </tr>
+    <% end %>
 
   <div class="btn-group"><% if can? :new, @client %>
     <button type="button" class="btn btn-default btn">
