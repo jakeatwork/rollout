@@ -8,10 +8,10 @@
 <h5>test: <%= @launch_date  %></h5>
 
   <div class="btn-group"><% if can? :new, @client %>
-    <button type="button" class="btn btn-default btn-xs">
+    <button type="button" class="btn btn-default btn">
       <%= link_to 'New Client', new_client_path %>
     </button><% end %>
-    <button type="button" class="btn btn-default btn-xs">
+    <button type="button" class="btn btn-default btn">
       <%= link_to "Export XLS", clients_path(format: "xls") %>
     </button>
   <br>

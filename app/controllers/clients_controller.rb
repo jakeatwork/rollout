@@ -8,6 +8,7 @@ class ClientsController < ApplicationController
   # GET /clients.json
   def index
     @clients = Client.all
+    # @launch_date = @client.launch_date.order()
     @now = Time.now
     respond_to do |format|
       format.html
