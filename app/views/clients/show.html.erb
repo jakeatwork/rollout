@@ -27,6 +27,15 @@
   <strong>Region:</strong>
   <%= @client.region %>
 </p>
+
+<% if can? :destroy, @client %>
+<p>
+  <strong>Delete Client:</strong>
+<%= link_to 'Destroy', @client, method: :delete, data: { confirm: 'Are you sure?' } %>
+</p>
+<% end %>
+
+
 <% if can? :edit, @client %>
 <%= link_to 'Edit', edit_client_path(@client) %> |
 <% end %>

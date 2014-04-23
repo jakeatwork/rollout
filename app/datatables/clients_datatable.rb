@@ -22,7 +22,6 @@ private
         link_to(client.name, client),
         client.launch_date,
         number_to_currency(client.price.cost),
-        link_to('Delete Client', client, method: :delete, data: { confirm: 'Are you sure?' })
       ]
     end
   end
