@@ -28,6 +28,11 @@
   <%= @client.region %>
 </p>
 
+<p>
+  <strong>Notes:</strong>
+  <%= @client.notes %>
+</p>
+
 <% if can? :destroy, @client %>
 <p>
   <strong>Delete Client:</strong>
