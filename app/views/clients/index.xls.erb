@@ -13,7 +13,7 @@
   <AllowPNG/>
  </OfficeDocumentSettings>
  <ExcelWorkbook xmlns="urn:schemas-microsoft-com:office:excel">
-  <WindowHeight>13080</WindowHeight>
+  <WindowHeight>16080</WindowHeight>
   <WindowWidth>28800</WindowWidth>
   <WindowTopX>0</WindowTopX>
   <WindowTopY>0</WindowTopY>
@@ -28,6 +28,9 @@
    <Interior/>
    <NumberFormat/>
    <Protection/>
+  </Style>
+  <Style ss:ID="s22">
+   <NumberFormat ss:Format="yyyy\-mm\-dd"/>
   </Style>
  </Styles>
   <Worksheet ss:Name="Advantage Clients">
@@ -56,10 +59,10 @@
           <Cell><Data ss:Type="String"><%= client.name %></Data></Cell>
           <Cell><Data ss:Type="String"><%= client.division.name %></Data></Cell>
           <Cell><Data ss:Type="String"><%= client.region %></Data></Cell>
-          <Cell><Data ss:Type="String"><%= client.launch_date %></Data></Cell>
+          <Cell ss:StyleID="s22"><Data ss:Type="DateTime"><%= client.launch_date %></Data></Cell>
           <Cell><Data ss:Type="String"><%= client.internal %></Data></Cell>
           <Cell><Data ss:Type="String"><%= client.price.name %></Data></Cell>
-          <Cell><Data ss:Type="String">$<%= client.price.cost %></Data></Cell>
+          <Cell><Data ss:Type="Number"><%= client.price.cost %></Data></Cell>
           <Cell><Data ss:Type="String"><%= client.notes %></Data></Cell>
         </Row>
     <% end %>
