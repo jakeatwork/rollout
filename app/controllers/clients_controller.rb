@@ -15,6 +15,10 @@ class ClientsController < ApplicationController
       format.json { render json: ClientsDatatable.new(view_context) }
       format.xls
     end
+    @sum_2014 = [
+      @clients.each do |client| %>
+          <%= ((2015 * 12 + 1) - (client.launch_date.year * 12 + client.launch_date.month)) * client.price.cost %>,
+        <% end %>.sum %>]
   end
 
   # GET /clients/1
