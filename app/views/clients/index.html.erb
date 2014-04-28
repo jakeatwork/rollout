@@ -5,10 +5,8 @@
 <h4>2015 Clients: <%= Client.where("extract(year from launch_date) = ?", 2015).count %></h4>
 
 <h5>
-  2014 Revenue: $
-    <% array = [<% @clients.each do |client| %>
-          <%= ((2015 * 12 + 1) - (client.launch_date.year * 12 + client.launch_date.month)) * client.price.cost %>,
-        <% end %>.sum %>]
+  2014 Revenue: 
+  <%= @sum2014 %>
   </h5>
 
   <div class="btn-group"><% if can? :new, @client %>
