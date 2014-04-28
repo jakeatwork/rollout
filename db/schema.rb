@@ -11,10 +11,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140410231247) do
+ActiveRecord::Schema.define(version: 20140428182241) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "admins", force: true do |t|
+    t.string   "name"
+    t.integer  "resource_id"
+    t.string   "resource_type"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "admins", ["name", "resource_type", "resource_id"], name: "index_admins_on_name_and_resource_type_and_resource_id", using: :btree
+  add_index "admins", ["name"], name: "index_admins_on_name", using: :btree
 
   create_table "changes", force: true do |t|
     t.datetime "date"
@@ -33,6 +44,7 @@ ActiveRecord::Schema.define(version: 20140410231247) do
     t.integer  "price_id"
     t.date     "launch_date"
     t.text     "notes"
+    t.datetime "billing_start_date"
   end
 
   create_table "clients_prices", force: true do |t|
@@ -97,6 +109,13 @@ ActiveRecord::Schema.define(version: 20140410231247) do
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
+
+  create_table "users_admins", id: false, force: true do |t|
+    t.integer "user_id"
+    t.integer "admin_id"
+  end
+
+  add_index "users_admins", ["user_id", "admin_id"], name: "index_users_admins_on_user_id_and_admin_id", using: :btree
 
   create_table "users_roles", id: false, force: true do |t|
     t.integer "user_id"
