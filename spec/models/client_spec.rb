@@ -12,7 +12,7 @@
 #  price_id           :integer
 #  launch_date        :date
 #  notes              :text
-#  billing_start_date :datetime
+#  billing_start_date :date
 #
 
 require 'spec_helper'
