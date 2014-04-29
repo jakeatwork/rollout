@@ -34,7 +34,7 @@
   </Style>
  </Styles>
   <Worksheet ss:Name="Advantage Clients">
-    <Table ss:ExpandedColumnCount="8" x:FullColumns="1"
+    <Table x:FullColumns="1"
      x:FullRows="1" ss:DefaultColumnWidth="65" ss:DefaultRowHeight="15">
      <Column ss:Width="227"/>
      <Column ss:Width="68"/>
@@ -52,6 +52,7 @@
           <Cell><Data ss:Type="String">Internal?</Data></Cell>
           <Cell><Data ss:Type="String">Business Unit Type</Data></Cell>
           <Cell><Data ss:Type="String">Cost Per Month</Data></Cell>
+          <Cell><Data ss:Type="String">Revenue in 2014</Data></Cell>
           <Cell><Data ss:Type="String">Notes</Data></Cell>
         </Row>
     <% @clients.each do |client| %>
@@ -63,6 +64,7 @@
           <Cell><Data ss:Type="String"><%= client.internal %></Data></Cell>
           <Cell><Data ss:Type="String"><%= client.price.name %></Data></Cell>
           <Cell><Data ss:Type="Number"><%= client.price.cost %></Data></Cell>
+          <Cell><Data ss:Type="Number"><%= ((2015 * 12 + 1) - (client.launch_date.year * 12 + client.launch_date.month)) * client.price.cost %></Data></Cell>
           <Cell><Data ss:Type="String"><%= client.notes %></Data></Cell>
         </Row>
     <% end %>
