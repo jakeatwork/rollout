@@ -53,6 +53,7 @@
           <Cell><Data ss:Type="String">Internal?</Data></Cell>
           <Cell><Data ss:Type="String">Business Unit Type</Data></Cell>
           <Cell><Data ss:Type="String">Cost Per Month</Data></Cell>
+          <Cell><Data ss:Type="String"># of months in 2014</Data></Cell>
           <Cell><Data ss:Type="String">Revenue in 2014</Data></Cell>
           <Cell><Data ss:Type="String">Notes</Data></Cell>
         </Row>
@@ -66,6 +67,7 @@
           <Cell><Data ss:Type="String"><%= client.internal %></Data></Cell>
           <Cell><Data ss:Type="String"><%= client.price.name %></Data></Cell>
           <Cell><Data ss:Type="Number"><%= client.price.cost %></Data></Cell>
+          <Cell><Data ss:Type="Number"><%= ((2015 * 12 + 1) - (client.billing_start_date.year * 12 + client.billing_start_date.month)) %></Data></Cell>
           <Cell><Data ss:Type="Number"><%= ((2015 * 12 + 1) - (client.billing_start_date.year * 12 + client.billing_start_date.month)) * client.price.cost %></Data></Cell>
           <Cell><Data ss:Type="String"><%= client.notes %></Data></Cell>
         </Row>
