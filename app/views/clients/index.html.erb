@@ -1,6 +1,6 @@
 <% sum = 0 %>
 <% @clients.each do |client| %>
-    <% if client.billing_start_date.year = 2014 %>
+    <% if client.billing_start_date.year == 2014 %>
         <% calc = (((2015 * 12 + 1) - (client.billing_start_date.year * 12 + client.billing_start_date.month)) * client.price.cost) %>
         <% sum += calc %>
         <% calc %>
