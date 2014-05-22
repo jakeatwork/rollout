@@ -56,6 +56,12 @@
           <Cell><Data ss:Type="String"># of months in 2014</Data></Cell>
           <Cell><Data ss:Type="String">Revenue in 2014</Data></Cell>
           <Cell><Data ss:Type="String">Notes</Data></Cell>
+          <Cell><Data ss:Type="String">Finance Contact Name</Data></Cell>
+          <Cell><Data ss:Type="String">Finance Contact Email</Data></Cell>
+          <Cell><Data ss:Type="String">Finance Contact Phone</Data></Cell>
+          <Cell><Data ss:Type="String">Venue Contact Name</Data></Cell>
+          <Cell><Data ss:Type="String">Venue Contact Email</Data></Cell>
+          <Cell><Data ss:Type="String">Venue Contact Email</Data></Cell>
         </Row>
     <% @clients.each do |client| %>
         <Row>
@@ -70,6 +76,12 @@
           <Cell><Data ss:Type="Number"><%= ((2015 * 12 + 1) - (client.billing_start_date.year * 12 + client.billing_start_date.month)) %></Data></Cell>
           <Cell><Data ss:Type="Number"><%= ((2015 * 12 + 1) - (client.billing_start_date.year * 12 + client.billing_start_date.month)) * client.price.cost %></Data></Cell>
           <Cell><Data ss:Type="String"><%= client.notes %></Data></Cell>
+          <Cell><Data ss:Type="String"><%= client.finance_contact_name %></Data></Cell>
+          <Cell><Data ss:Type="String"><%= client.finance_contact_email %></Data></Cell>
+          <Cell><Data ss:Type="String"><%= client.finance_contact_phone %></Data></Cell>
+          <Cell><Data ss:Type="String"><%= client.venue_contact_name %></Data></Cell>
+          <Cell><Data ss:Type="String"><%= client.venue_contact_email %></Data></Cell>
+          <Cell><Data ss:Type="String"><%= client.venue_contact_phone %></Data></Cell>
         </Row>
     <% end %>
     </Table>
