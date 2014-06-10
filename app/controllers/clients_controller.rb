@@ -16,12 +16,12 @@ class ClientsController < ApplicationController
       format.xls
     end
 
-    @array = [
-    @clients.each do |client| 
-          ((2015 * 12 + 1) - (client.launch_date.year * 12 + client.launch_date.month)) * client.price.cost
-    end
-  ]
-    @sum2014 = @array.sum
+    # @array = [
+    # @clients.each do |client| 
+          # ((2015 * 12 + 1) - (client.launch_date.year * 12 + client.launch_date.month)) * client.price.cost
+    # end
+  # ]
+    # @sum2014 = @array.sum
 
     # @array = []
     # @clients.each do |i|
