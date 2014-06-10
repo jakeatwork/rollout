@@ -20,7 +20,7 @@ private
     clients.map do |client|
       [
         link_to(client.name, client),
-        client.billing_date,
+        client.launch_date,
         number_to_currency(client.price.cost),
       ]
     end
