@@ -32,9 +32,9 @@ private
 
   def fetch_clients
     clients = Client.order("#{sort_column} #{sort_direction}")
-    clients = clients.page(page).per_page(10)
+    clients = clients.page(page).per_page(per_page)
     if params[:sSearch].present?
-      clients = clients.where("name like :search", search: "%#{params[:sSearch]}%")
+      clients = clients.where("name ilike :search", search: "%#{params[:sSearch]}%")
     end
     clients
   end
@@ -48,7 +48,7 @@ private
   end
 
   def sort_column
-    columns = %w[name launch_date]
+    columns = %w[launch_date]
     columns[params[:iSortCol_0].to_i]
   end
 

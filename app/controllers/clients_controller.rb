@@ -15,22 +15,6 @@ class ClientsController < ApplicationController
       format.json { render json: ClientsDatatable.new(view_context) }
       format.xls
     end
-
-    # @array = [
-    # @clients.each do |client| 
-          # ((2015 * 12 + 1) - (client.launch_date.year * 12 + client.launch_date.month)) * client.price.cost
-    # end
-  # ]
-    # @sum2014 = @array.sum
-
-    # @array = []
-    # @clients.each do |i|
-    #   @array << User.where("id = ?", i.reviewer_id )
-    # end
-
-    # @array = []
-    # @clients.each do |client|
-    # @array = @clients.map { |item| ((2015 * 12 + 1) - (@client.launch_date.year * 12 + @client.launch_date.month) * @client.price.cost) }
   end
 
   # GET /clients/1
@@ -104,6 +88,4 @@ class ClientsController < ApplicationController
     def client_params
       params.require(:client).permit(:name, :billing_start_date, :division_id, :region, :price_id, :internal, :launch_date, :notes)
     end
-
-    
 end

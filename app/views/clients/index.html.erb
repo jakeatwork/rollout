@@ -10,13 +10,17 @@
 <div class="container">
 <br>
 <h1>Advantage Clients as of: <%= @now %></h1> 
+
+
+
+<div class="alert alert-info alert-dismissable">
+  <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+  <strong>UPDATES: </strong> search is now case insensitive; results-per-page pull down works again
+</div>
+
 <h4>2014 Clients: <%= Client.where("extract(year from launch_date) = ?", 2014).count %></h4>
 <h4>2014 Revenue: $<%= sum %></h4>
 <h4>Remaining Clients: <%= Client.where("extract(year from launch_date) = ?", 2015).count %></h4>
-
-
-
-
 
 
   <div class="btn-group"><% if can? :new, @client %>
