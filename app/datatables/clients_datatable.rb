@@ -48,7 +48,7 @@ private
   end
 
   def sort_column
-    columns = %w[launch_date]
+    columns = %w[launch_date name]
     columns[params[:iSortCol_0].to_i]
   end
 

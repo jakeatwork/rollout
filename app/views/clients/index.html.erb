@@ -15,7 +15,7 @@
 
 <div class="alert alert-info alert-dismissable">
   <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-  <strong>UPDATES: </strong> search is now case insensitive; results-per-page pull down works again
+  <strong>UPDATES: </strong> search is now case insensitive; results-per-page pull down works again; and default sort is by launch date!
 </div>
 
 <h4>2014 Clients: <%= Client.where("extract(year from launch_date) = ?", 2014).count %></h4>
