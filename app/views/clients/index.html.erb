@@ -38,11 +38,9 @@
 <br>
 <h1>Advantage Clients as of: <%= @now %> PST</h1> 
 
-
-
 <div class="alert alert-info alert-dismissable">
   <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-  <strong>UPDATES: </strong> search is now case insensitive; results-per-page pull down works again; and default sort is by launch date!
+  <strong>UPDATES: </strong> the rollout schedule <strong>WILL</strong> change, so please take everything with a grain of salt right now (Jul 18, 2014)
 </div>
 
 <table class="table table-striped table-hover">
@@ -64,13 +62,7 @@
     <td>Total Revenue in 2015: <strong>$<%= number_with_delimiter(sum3 + sum2, :delimiter => ',') %></strong></td>
   </tr>
 </tbody>
-
-
-
-
-
-
-
+</table>
 
   <div class="btn-group"><% if can? :new, @client %>
     <button type="button" class="btn btn-default btn">
