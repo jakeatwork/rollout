@@ -12,7 +12,7 @@ gem 'turbolinks'
 gem 'rails_12factor', group: :production
 gem 'jbuilder', '~> 1.2'
 gem 'bootstrap-sass'
-gem 'jquery-datatables-rails', github: 'rweng/jquery-datatables-rails'
+gem 'jquery-datatables-rails', '~> 2.1.10.0.3'
 gem 'cancan'
 gem 'squeel'
 gem 'paper_trail', '~> 3.0.1'

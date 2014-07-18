@@ -4,7 +4,7 @@
 
 jQuery ->
         $('#clients').dataTable
-          sPaginationType: "full_numbers"
+          sPaginationType: "bootstrap"
           bJQueryUI: true
           bProcessing: true
           bServerSide: true

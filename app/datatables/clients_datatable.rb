@@ -21,6 +21,7 @@ private
       [
         link_to(client.name, client),
         client.launch_date,
+
         number_to_currency(client.price.cost),
       ]
     end
