@@ -64,6 +64,8 @@
           <Cell><Data ss:Type="String">Cost Per Month</Data></Cell>
           <Cell><Data ss:Type="String"># of months in 2014</Data></Cell>
           <Cell><Data ss:Type="String">Revenue in 2014</Data></Cell>
+          <Cell><Data ss:Type="String"># of months in 2015</Data></Cell>
+          <Cell><Data ss:Type="String">Revenue in 2015</Data></Cell>
           <Cell><Data ss:Type="String">Notes</Data></Cell>
           <Cell><Data ss:Type="String">Finance Contact Name</Data></Cell>
           <Cell><Data ss:Type="String">Finance Contact Email</Data></Cell>
@@ -84,6 +86,11 @@
           <Cell><Data ss:Type="Number"><%= client.price.cost %></Data></Cell>
           <Cell><Data ss:Type="Number"><%= ((2015 * 12 + 1) - (client.billing_start_date.year * 12 + client.billing_start_date.month)) %></Data></Cell>
           <Cell><Data ss:Type="Number"><%= ((2015 * 12 + 1) - (client.billing_start_date.year * 12 + client.billing_start_date.month)) * client.price.cost %></Data></Cell>
+
+          <Cell><Data ss:Type="Number"><%= ((2016 * 12 + 1) - (client.billing_start_date.year * 12 + client.billing_start_date.month)) %></Data></Cell>
+          <Cell><Data ss:Type="Number"><%= ((2016 * 12 + 1) - (client.billing_start_date.year * 12 + client.billing_start_date.month)) * client.price.cost %></Data></Cell>
+
+
           <Cell><Data ss:Type="String"><%= client.notes %></Data></Cell>
           <Cell><Data ss:Type="String"><%= client.finance_contact_name %></Data></Cell>
           <Cell><Data ss:Type="String"><%= client.finance_contact_email %></Data></Cell>

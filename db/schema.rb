@@ -34,13 +34,6 @@ ActiveRecord::Schema.define(version: 20140522181347) do
     t.datetime "updated_at"
   end
 
-  create_table "checklists", id: false, force: true do |t|
-    t.integer  "guest_id"
-    t.integer  "list_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "clients", force: true do |t|
     t.string   "name"
     t.string   "division_id"
@@ -72,34 +65,6 @@ ActiveRecord::Schema.define(version: 20140522181347) do
     t.datetime "updated_at"
   end
 
-  create_table "events", force: true do |t|
-    t.string   "name"
-    t.datetime "date"
-    t.integer  "venue_id"
-    t.integer  "performer_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "guestlists", id: false, force: true do |t|
-    t.integer  "guest_id"
-    t.integer  "list_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "guests", force: true do |t|
-    t.string   "list_id"
-    t.integer  "type_id"
-    t.text     "comments"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.string   "name"
-    t.string   "email"
-    t.string   "phone"
-    t.integer  "addons"
-  end
-
   create_table "launches", force: true do |t|
     t.boolean  "beta"
     t.datetime "betadate"
@@ -108,24 +73,9 @@ ActiveRecord::Schema.define(version: 20140522181347) do
     t.datetime "updated_at"
   end
 
-  create_table "lists", force: true do |t|
-    t.integer  "venue_id"
-    t.integer  "event_id"
-    t.integer  "performer_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.string   "name"
-  end
-
   create_table "logs", force: true do |t|
     t.integer  "user_id"
     t.string   "modification"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "performers", force: true do |t|
-    t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -147,12 +97,6 @@ ActiveRecord::Schema.define(version: 20140522181347) do
 
   add_index "roles", ["name", "resource_type", "resource_id"], name: "index_roles_on_name_and_resource_type_and_resource_id", using: :btree
   add_index "roles", ["name"], name: "index_roles_on_name", using: :btree
-
-  create_table "types", force: true do |t|
-    t.string   "name"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false
@@ -186,12 +130,6 @@ ActiveRecord::Schema.define(version: 20140522181347) do
   end
 
   add_index "users_roles", ["user_id", "role_id"], name: "index_users_roles_on_user_id_and_role_id", using: :btree
-
-  create_table "venues", force: true do |t|
-    t.string   "name"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
 
   create_table "versions", force: true do |t|
     t.string   "item_type",  null: false

@@ -7,6 +7,24 @@
     <% end %>
 <% end %>
 
+<% sum2 = 0 %>
+<% @clients.each do |client| %>
+    <% if client.billing_start_date.year == 2015 %>
+        <% calc = (((2016 * 12 + 1) - (client.billing_start_date.year * 12 + client.billing_start_date.month)) * client.price.cost) %>
+        <% sum2 += calc %>
+        <% calc %>
+    <% end %>
+<% end %>
+
+<% sum3 = 0 %>
+<% @clients.each do |client| %>
+    <% if client.billing_start_date.year == 2014 %>
+        <% calc = (client.price.cost * 12) %>
+        <% sum3 += calc %>
+        <% calc %>
+    <% end %>
+<% end %>
+
 <div class="container">
 <br>
 <h1>Advantage Clients as of: <%= @now %></h1> 
@@ -21,6 +39,8 @@
 <h4>2014 Clients: <%= Client.where("extract(year from launch_date) = ?", 2014).count %></h4>
 <h4>2014 Revenue: $<%= sum %></h4>
 <h4>Remaining Clients: <%= Client.where("extract(year from launch_date) = ?", 2015).count %></h4>
+<h4>New Revenue in 2015: $<%= sum2 %></h4>
+<h4>Total Revenue in 2015: $<%= (sum3 + sum2) %></h4>
 
 
   <div class="btn-group"><% if can? :new, @client %>
