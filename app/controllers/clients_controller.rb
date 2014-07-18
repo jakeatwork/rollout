@@ -8,8 +8,8 @@ class ClientsController < ApplicationController
   # GET /clients.json
   def index
     @clients = Client.all
-    # @launch_date = @client.launch_date.order()
-    @now = Time.now
+    t = Time.zone.now
+    @now = t.strftime("%a, %b %d, %Y, %l:%M %p")
     respond_to do |format|
       format.html
       format.json { render json: ClientsDatatable.new(view_context) }
