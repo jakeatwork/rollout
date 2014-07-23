@@ -20,6 +20,7 @@
 #  venue_contact_name    :string(255)
 #  venue_contact_email   :string(255)
 #  venue_contact_phone   :string(255)
+#  ticketing_provider    :string(255)
 #
 
 require 'spec_helper'
