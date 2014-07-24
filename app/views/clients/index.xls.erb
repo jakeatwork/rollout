@@ -41,6 +41,7 @@
      <Column ss:AutoFitWidth="0" ss:Width="68"/>
      <Column ss:AutoFitWidth="0" ss:Width="87"/>
      <Column ss:AutoFitWidth="0" ss:Width="103"/>
+     <Column ss:AutoFitWidth="0" ss:Width="103"/>
      <Column ss:AutoFitWidth="0" ss:Width="66"/>
      <Column ss:AutoFitWidth="0" ss:Width="99"/>
      <Column ss:AutoFitWidth="0" ss:Width="99"/>
@@ -59,6 +60,7 @@
           <Cell><Data ss:Type="String">Division</Data></Cell>
           <Cell><Data ss:Type="String">Ticketing Provider(s)</Data></Cell>
           <Cell><Data ss:Type="String">Region</Data></Cell>
+          <Cell><Data ss:Type="String">Kickoff Date</Data></Cell>
           <Cell><Data ss:Type="String">Launch Date</Data></Cell>
           <Cell><Data ss:Type="String">Billing Start Date</Data></Cell>
           <Cell><Data ss:Type="String">Internal?</Data></Cell>
@@ -82,6 +84,7 @@
           <Cell><Data ss:Type="String"><%= client.division.name %></Data></Cell>
           <Cell><Data ss:Type="String"><%= client.ticketing_provider %></Data></Cell>
           <Cell><Data ss:Type="String"><%= client.region %></Data></Cell>
+          <Cell ss:StyleID="s22"><Data ss:Type="DateTime"><%= client.kickoff_date %></Data></Cell>
           <Cell ss:StyleID="s22"><Data ss:Type="DateTime"><%= client.launch_date %></Data></Cell>
           <Cell ss:StyleID="s22"><Data ss:Type="DateTime"><%= client.billing_start_date %></Data></Cell>
           <Cell><Data ss:Type="String"><%= client.internal %></Data></Cell>
