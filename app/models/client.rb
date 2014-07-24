@@ -21,7 +21,7 @@
 #  venue_contact_email   :string(255)
 #  venue_contact_phone   :string(255)
 #  ticketing_provider    :string(255)
-#  kickoff_date          :datetime
+#  kickoff_date          :date
 #
 
 class Client < ActiveRecord::Base
