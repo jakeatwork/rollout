@@ -38,6 +38,7 @@
      x:FullRows="1" ss:DefaultColumnWidth="65" ss:DefaultRowHeight="15">
      <Column ss:AutoFitWidth="0" ss:Width="227"/>
      <Column ss:AutoFitWidth="0" ss:Width="68"/>
+     <Column ss:AutoFitWidth="0" ss:Width="68"/>
      <Column ss:AutoFitWidth="0" ss:Width="87"/>
      <Column ss:AutoFitWidth="0" ss:Width="103"/>
      <Column ss:AutoFitWidth="0" ss:Width="66"/>
@@ -56,6 +57,7 @@
         <Row>
           <Cell><Data ss:Type="String">Name</Data></Cell>
           <Cell><Data ss:Type="String">Division</Data></Cell>
+          <Cell><Data ss:Type="String">Ticketing Provider(s)</Data></Cell>
           <Cell><Data ss:Type="String">Region</Data></Cell>
           <Cell><Data ss:Type="String">Launch Date</Data></Cell>
           <Cell><Data ss:Type="String">Billing Start Date</Data></Cell>
@@ -78,6 +80,7 @@
         <Row>
           <Cell><Data ss:Type="String"><%= client.name %></Data></Cell>
           <Cell><Data ss:Type="String"><%= client.division.name %></Data></Cell>
+          <Cell><Data ss:Type="String"><%= client.ticketing_provider %></Data></Cell>
           <Cell><Data ss:Type="String"><%= client.region %></Data></Cell>
           <Cell ss:StyleID="s22"><Data ss:Type="DateTime"><%= client.launch_date %></Data></Cell>
           <Cell ss:StyleID="s22"><Data ss:Type="DateTime"><%= client.billing_start_date %></Data></Cell>
