@@ -1,3 +1,5 @@
+<!-- calculations for the 2014 & 2015 financial and count summary; ideally these would be more centralized so the calcs are available elsewhere, but this is the page need right now -->
+
 <% sum = 0 %>
 <% @clients.each do |client| %>
     <% if client.billing_start_date.year == 2014 %>
@@ -33,6 +35,9 @@
     <% calc %>
   <% end %>
 <% end %>
+
+
+<!-- table for displaying the summary calcs from above -->
 
 <div class="container">
 <br>
@@ -75,6 +80,9 @@
   </div>
 </div>
 
+
+<!-- datatables framework below -->
+
 <div class="container">
 <table id="clients" class="display" data-source="<%= clients_url(format: "json") %>">
   <thead>
@@ -89,6 +97,9 @@
   <tbody>
   </tbody>
 </table>
+
+
+<!-- only doug and jake can edit - revise models/ability.rb and the actual data to add more/other permissions or users to the admin bucket -->
 
 <br>
 <% if can? :new, @client %>
