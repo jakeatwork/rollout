@@ -1,40 +1,35 @@
 <!-- calculations for the 2014 & 2015 financial and count summary; ideally these would be more centralized so the calcs are available elsewhere, but this is the page need right now -->
 
-<% sum = 0 %>
+<!-- new revenue in 2014 -->
+<% partial_rev_2014 = 0 %>
 <% @clients.each do |client| %>
     <% if client.billing_start_date.year == 2014 %>
         <% calc = (((2015 * 12 + 1) - (client.billing_start_date.year * 12 + client.billing_start_date.month)) * client.price.cost) %>
-        <% sum += calc %>
+        <% partial_rev_2014 += calc %>
         <% calc %>
     <% end %>
 <% end %>
 
-<% sum2 = 0 %>
+<!-- new revenue in 2015 - not including any continuing 2014 clients -->
+<% partial_rev_2015 = 0 %>
 <% @clients.each do |client| %>
     <% if client.billing_start_date.year == 2015 %>
         <% calc = (((2016 * 12 + 1) - (client.billing_start_date.year * 12 + client.billing_start_date.month)) * client.price.cost) %>
-        <% sum2 += calc %>
+        <% partial_rev_2015 += calc %>
         <% calc %>
     <% end %>
 <% end %>
 
-<% sum3 = 0 %>
-<% @clients.each do |client| %>
-    <% if client.billing_start_date.year == 2014 %>
-        <% calc = (client.price.cost * 12) %>
-        <% sum3 += calc %>
-        <% calc %>
-    <% end %>
-<% end %>
-
-<% sum4 = 0 %>
+<!-- total revenue in 2014 - only a projection for calculation total 2015 revenue -->
+<% full_rev_2014 = 0 %>
 <% @clients.each do |client| %>
   <% if client.billing_start_date.year == 2014 %>
     <% calc = (client.price.cost * 12) %>
-    <% sum4 += calc %>
+    <% full_rev_2014 += calc %>
     <% calc %>
   <% end %>
 <% end %>
+
 
 
 <!-- table for displaying the summary calcs from above -->
@@ -59,12 +54,12 @@
     <td>Clients: <strong><%= Client.where("extract(year from launch_date) = ?", 2015).count %></strong></td>
   </tr>
   <tr>
-    <td>2014 Revenue: <strong>$<%= number_with_delimiter(sum, :delimiter => ',') %></strong></td>
-    <td>New Revenue in 2015: <strong>$<%= number_with_delimiter(sum2, :delimiter => ',') %></strong></td>
+    <td>2014 Revenue: <strong>$<%= number_with_delimiter(partial_rev_2014, :delimiter => ',') %></strong></td>
+    <td>New Revenue in 2015: <strong>$<%= number_with_delimiter(partial_rev_2015, :delimiter => ',') %></strong></td>
   </tr>
   <tr>
-    <td>2014 Revenue (if full year): <strong>$<%= number_with_delimiter(sum4, :delimiter => ',') %></strong></td>
-    <td>Total Revenue in 2015: <strong>$<%= number_with_delimiter(sum3 + sum2, :delimiter => ',') %></strong></td>
+    <td>2014 Revenue (if full year): <strong>$<%= number_with_delimiter(full_rev_2014, :delimiter => ',') %></strong></td>
+    <td>Total Revenue in 2015: <strong>$<%= number_with_delimiter(full_rev_2014 + partial_rev_2015, :delimiter => ',') %></strong></td>
   </tr>
 </tbody>
 </table>
