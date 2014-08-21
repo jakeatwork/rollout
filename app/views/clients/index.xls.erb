@@ -68,9 +68,9 @@
           <Cell><Data ss:Type="String">Business Unit Type</Data></Cell>
           <Cell><Data ss:Type="String">Cost Per Month</Data></Cell>
           <Cell><Data ss:Type="String"># of months in 2014</Data></Cell>
-          <Cell><Data ss:Type="String">Partial Revenue in 2014</Data></Cell>
+          <Cell><Data ss:Type="String">New Revenue in 2014</Data></Cell>
           <Cell><Data ss:Type="String"># of months in 2015</Data></Cell>
-          <Cell><Data ss:Type="String">Partial Revenue in 2015</Data></Cell>
+          <Cell><Data ss:Type="String">New Revenue in 2015</Data></Cell>
           <Cell><Data ss:Type="String">Total Revenue in 2015</Data></Cell>
           <Cell><Data ss:Type="String">Notes</Data></Cell>
           <Cell><Data ss:Type="String">Finance Contact Name</Data></Cell>
@@ -94,9 +94,9 @@
           <Cell><Data ss:Type="String"><%= client.price.cost %></Data></Cell>
           <Cell><Data ss:Type="Number"><% if (client.billing_start_date.year == 2014) %><%= ((2015 * 12 + 1) - (client.billing_start_date.year * 12 + client.billing_start_date.month)) %><% end %></Data></Cell>
           <Cell><Data ss:Type="Number"><% partial_rev_2014 = 0 %><% if client.billing_start_date.year == 2014 %><% calc = (((2015 * 12 + 1) - (client.billing_start_date.year * 12 + client.billing_start_date.month)) * client.price.cost) %><% partial_rev_2014 += calc %><% calc %><% end %><% if (client.billing_start_date.year == 2014) %><%= (partial_rev_2014) %><% end %></Data></Cell>
-          <Cell><Data ss:Type="Number"><%= ((2016 * 12 + 1) - (client.billing_start_date.year * 12 + client.billing_start_date.month)) %></Data></Cell>
+          <Cell><Data ss:Type="Number"><% if client.billing_start_date.year == 2014 %><%= 12 %><% elsif client.billing_start_date.year == 2015 %><%= ((2016 * 12 + 1) - (client.billing_start_date.year * 12 + client.billing_start_date.month)) %><% end %></Data></Cell>
           <Cell><Data ss:Type="Number"><% partial_rev_2015 = 0 %><% if client.billing_start_date.year == 2015 %><% calc = (((2016 * 12 + 1) - (client.billing_start_date.year * 12 + client.billing_start_date.month)) * client.price.cost) %><% partial_rev_2015 += calc %><% calc %><% end %><% if (client.billing_start_date.year == 2015) %><%= (partial_rev_2015) %><% end %></Data></Cell>
-          <Cell><Data ss:Type="Number">2</Data></Cell>
+          <Cell><Data ss:Type="Number"><% if client.billing_start_date.year == 2014 %><% full_rev_2014 = 0 %><% full_rev_2014 = (client.price.cost * 12) %><%= (full_rev_2014) %><% elsif client.billing_start_date.year == 2015 %><% partial_rev_2015 = 0 %><% calc = (((2016 * 12 + 1) - (client.billing_start_date.year * 12 + client.billing_start_date.month)) * client.price.cost) %><% partial_rev_2015 += calc %><% calc %><%= (partial_rev_2015) %><% end %></Data></Cell>
           <Cell><Data ss:Type="String"><%= client.notes %></Data></Cell>
           <Cell><Data ss:Type="String"><%= client.finance_contact_name %></Data></Cell>
           <Cell><Data ss:Type="String"><%= client.finance_contact_email %></Data></Cell>
