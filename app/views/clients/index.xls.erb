@@ -91,7 +91,7 @@
           <Cell ss:StyleID="s22"><Data ss:Type="DateTime"><%= client.billing_start_date %></Data></Cell>
           <Cell><Data ss:Type="String"><%= client.internal %></Data></Cell>
           <Cell><Data ss:Type="String"><%= client.price.name %></Data></Cell>
-          <Cell><Data ss:Type="String"><%= client.price.cost %></Data></Cell>
+          <Cell><Data ss:Type="Number"><%= client.price.cost %></Data></Cell>
           <Cell><Data ss:Type="Number"><% if (client.billing_start_date.year == 2014) %><%= ((2015 * 12 + 1) - (client.billing_start_date.year * 12 + client.billing_start_date.month)) %><% end %></Data></Cell>
           <Cell><Data ss:Type="Number"><% partial_rev_2014 = 0 %><% if client.billing_start_date.year == 2014 %><% calc = (((2015 * 12 + 1) - (client.billing_start_date.year * 12 + client.billing_start_date.month)) * client.price.cost) %><% partial_rev_2014 += calc %><% calc %><% end %><% if (client.billing_start_date.year == 2014) %><%= (partial_rev_2014) %><% end %></Data></Cell>
           <Cell><Data ss:Type="Number"><% if client.billing_start_date.year == 2014 %><%= 12 %><% elsif client.billing_start_date.year == 2015 %><%= ((2016 * 12 + 1) - (client.billing_start_date.year * 12 + client.billing_start_date.month)) %><% end %></Data></Cell>
