@@ -1,0 +1,25 @@
+<% if client.billing_start_date.year == 2014 %>
+	<% full_rev_2014 = (client.price.cost * 12) %><% end %>
+	<% if client.billing_start_date.year == 2015 %>
+	<% calc = (((2016 * 12 + 1) - (client.billing_start_date.year * 12 + client.billing_start_date.month)) * client.price.cost) %><% partial_rev_2015 += calc %><% calc %>
+	<% total_rev_2015 = (full_rev_2014 + partial_rev_2015) %>
+<%= (total_rev_2015) %>
+<% end %>
+
+<% for client.billing_start_date.year == 2014 %><% full_rev_2014 = (client.price.cost * 12) %><% if client.billing_start_date.year == 2015 %><% calc = (((2016 * 12 + 1) - (client.billing_start_date.year * 12 + client.billing_start_date.month)) * client.price.cost) %><% partial_rev_2015 += calc %><% calc %><% total_rev_2015 = (full_rev_2014 + partial_rev_2015) %><%= (total_rev_2015) %><% end %><% end %>
+
+<% if client.billing_start_date.year == 2015 %>
+	<% calc = (((2016 * 12 + 1) - (client.billing_start_date.year * 12 + client.billing_start_date.month)) * client.price.cost) %><% partial_rev_2015 += calc %><% calc %>
+	<% total_rev_2015 = full_rev_2014 + partial_rev_2015 %>
+<%= total_rev_2015 %>
+<% end %>
+
+<% partial_rev_2015 = 0 %>
+	<% if client.billing_start_date.year == 2015 %>
+		<% calc = (((2016 * 12 + 1) - (client.billing_start_date.year * 12 + client.billing_start_date.month)) * client.price.cost) %>
+		<% partial_rev_2015 += calc %>
+		<% calc %>
+	<% end %>
+<% if (client.billing_start_date.year == 2015) %>
+	<%= (partial_rev_2015) %>
+<% end %>

@@ -10,6 +10,23 @@ class ClientsController < ApplicationController
     @clients = Client.all
     t = Time.zone.now
     @now = t.strftime("%a, %b %d, %Y, %l:%M %p")
+    @partial_rev_2015 = 0
+    @clients.each do |client|
+        if client.billing_start_date.year == 2015
+            calc = (((2016 * 12 + 1) - (client.billing_start_date.year * 12 + client.billing_start_date.month)) * client.price.cost)
+            @partial_rev_2015 += calc
+            calc
+        end
+    end
+    @full_rev_2014 = 0
+    @clients.each do |client|
+      if client.billing_start_date.year == 2014
+        calc = (client.price.cost * 12)
+        @full_rev_2014 += calc
+        calc
+      end
+    end
+    @total_rev_2015 = (@full_rev_2014 + @partial_rev_2015)
     respond_to do |format|
       format.html
       format.json { render json: ClientsDatatable.new(view_context) }
